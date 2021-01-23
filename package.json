@@ -13,7 +13,8 @@
     "webpack-cli": "^4.4.0"
   },
   "scripts": {
-    "build": "lerna run build --parallel --stream",
-    "release": "lerna version"
+    "compile": "lerna run build --parallel --stream",
+    "release": "lerna version",
+    "package": "node .github/actions/publish/src/index.js"
   }
 }

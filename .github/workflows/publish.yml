@@ -1,0 +1,22 @@
+name: Publish
+on:
+  create:
+    tags:
+      - '*'
+
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: SCM
+        uses: actions/checkout@v2
+      - name: Compile
+        run: |
+          yarn install
+          yarn compile
+      - name: Publish
+        uses: ./.github/actions/publish
+        with:
+          tag: ${{ github.ref }}
+          token: ${{ secrets.NPM_TOKEN }}
