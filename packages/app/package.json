@@ -1,0 +1,31 @@
+{
+  "name": "@another-github/app",
+  "version": "0.1.0",
+  "description": "Another Github UI",
+  "license": "MIT",
+  "author": {
+    "name": "Another Github",
+    "url": "https://github.com/Another-Github"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Another-Github",
+    "directory": "packages/app"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production --config ../../config/webpack.config.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@another-github/components": "0.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-use": "^15.3.8",
+    "styled-components": "^5.2.1"
+  }
+}
