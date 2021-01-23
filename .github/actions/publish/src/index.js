@@ -22,6 +22,7 @@ const npmrc = async () => {
     'registry=http://registry.npmjs.org',
     `//registry.npmjs.org/:_authToken=${npmToken}`
   ].join('\n'));
+  core.exportVariable('NPM_CONFIG_USERCONFIG', npmrcFile);
 };
 
 const parseTag = async () => {
@@ -38,29 +39,25 @@ const search = async ({ package, version }) => {
   console.info('Searching for package:', package, version);
 
   if (!allowed.includes(package)) {
-    return null;
+    throw Error('Not allowed');
   }
 
   const packages = fs.readdirSync(path.resolve(repoDir, 'packages'))
   for (let i = 0, l = packages.length; i < l; i += 1) {
     const packageDir = path.resolve(repoDir, 'packages', packages[i]);
-    const packageJson = JSON.parse(fs.readFileSync(path.resolve(packageDir, 'package.json')));
+    const packageJson = JSON.parse(fs.readFileSync(path.join(packageDir, 'package.json')));
     if (packageJson.name === package && packageJson.version === version) {
       return { packageDir };
     }
   }
-  return null;
+
+  throw Error('Not found');
 };
 
 const publish = async ({ packageDir }) => {
   console.info('Publishing:', packageDir);
-  const cmd = 'npm publish';
-  console.info(execSync(cmd, {
-    cwd: packageDir,
-    env: {
-      NPM_CONFIG_USERCONFIG: path.resolve(repoDir, '.npmrc'),
-    },
-  }).toString());
+  console.info(execSync('ls -al', { cwd: packageDir }).toString());
+  console.info(execSync('npm publish', { cwd: packageDir }).toString());
 };
 
 Promise.resolve()
