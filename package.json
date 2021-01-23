@@ -14,6 +14,6 @@
   },
   "scripts": {
     "build": "lerna run build --parallel --stream",
-    "start": "lerna"
+    "release": "lerna version"
   }
 }
