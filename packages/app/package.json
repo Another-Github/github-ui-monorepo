@@ -1,6 +1,6 @@
 {
   "name": "@another-github/app",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Another Github UI",
   "license": "MIT",
   "author": {
@@ -22,9 +22,9 @@
   },
   "keywords": [],
   "dependencies": {
+    "@another-github/components": "^0.1.5",
     "@types/react": "*",
     "@types/styled-components": "*",
-    "@another-github/components": "^0.1.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-use": "^15.3.8",
