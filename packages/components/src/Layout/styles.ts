@@ -6,7 +6,6 @@ export const Page = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  padding: 0;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;

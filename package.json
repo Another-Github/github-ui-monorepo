@@ -7,6 +7,10 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-console": "^1.2.2",
+    "@storybook/addon-knobs": "^6.1.15",
+    "@storybook/react": "^6.1.15",
     "babel-loader": "^8.2.2",
     "lerna": "^3.22.1",
     "ts-loader": "^8.0.14",
@@ -15,6 +19,8 @@
     "webpack-cli": "^4.4.0"
   },
   "scripts": {
+    "develop": "start-storybook -c .storybook -p 2020 --ci",
+    "stories": "build-storybook -c .storybook -o dist",
     "compile": "lerna run build --parallel --stream",
     "release": "lerna version",
     "package": "node .github/actions/publish/src/index.js"

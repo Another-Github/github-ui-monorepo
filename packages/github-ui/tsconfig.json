@@ -4,9 +4,10 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
     "module": "es2020",
+    "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./dist/",
-    "target": "es2015"
+    "target": "es5"
   },
   "exclude": ["node_modules"]
 }
