@@ -1,6 +1,6 @@
 {
   "name": "@another-github/components",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Another Github components",
   "keywords": [],
   "repository": {
@@ -13,15 +13,17 @@
     "name": "Another Github",
     "url": "https://github.com/Another-Github"
   },
-  "main": "dist/index.js",
-  "module": "src/index.js",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "webpack --mode production --config ../../config/webpack.config.js"
+    "build": "webpack --config ../../config/webpack.config.js"
   },
   "devDependencies": {
+    "@types/react": "*",
+    "@types/styled-components": "*",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-use": "^15.3.8",

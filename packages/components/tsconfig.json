@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "./dist/",
+    "jsx": "react",
+    "module": "es2020",
+    "noImplicitAny": true,
+    "outDir": "./dist/",
+    "target": "es2015"
+  },
+  "exclude": ["node_modules"]
+}

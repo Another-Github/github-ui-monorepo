@@ -1,18 +1,19 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
+  entry: './src/index.ts',
   output: {
     path: path.resolve('./dist'),
     filename: 'index.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -23,6 +24,15 @@ module.exports = {
                 '@babel/preset-react',
               ],
             },
+          },
+        ],
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
           },
         ],
       },
